@@ -1,3 +1,4 @@
+/* Base Page Styles */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f6f8;
@@ -16,9 +17,16 @@ body {
 }
 
 #main-header h1 {
-  margin: 0 0 10px 0;
+  display: inline-block;
+  margin: 0 0 10px 10px;
+  vertical-align: middle;
 }
 
+#main-header img {
+  vertical-align: middle;
+}
+
+/* Card Container */
 .card {
   background-color: #ffffff;
   padding: 20px;
@@ -27,14 +35,14 @@ body {
   border: 1px solid #e0e0e0;
 }
 
-#add-expense-section {
-  border-left: 5px solid #27ae60;
+/* Interactive Details/Summary styling */
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  color: #2980b9;
 }
 
-#expenses-list-section {
-  border-left: 5px solid #e74c3c;
-}
-
+/* Form Styling */
 .form-group {
   margin-bottom: 15px;
 }
@@ -45,7 +53,9 @@ label {
   margin-bottom: 5px;
 }
 
-input {
+/* Task 5: Negation Pseudo-class & Direct Child Selectors */
+#add-expense-section input:not([type="button"]),
+#add-expense-section select {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
@@ -53,7 +63,66 @@ input {
   border-radius: 4px;
 }
 
-.placeholder-text {
-  font-style: italic;
-  color: #7f8c8d;
+/* Task 5: Focus State for Inputs */
+input:focus, select:focus {
+  border-color: #27ae60;
+  outline: none;
+  background-color: #f0fff4;
+}
+
+/* Task 4: Button Styling & Cursor Pointer */
+#add-expense-btn {
+  background-color: #27ae60;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#add-expense-btn:hover {
+  background-color: #219150;
+}
+
+/* Task 1: Table Styling */
+.expenses-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+/* Task 5: Descendant Selector */
+#expenses-list-section th,
+#expenses-list-section td {
+  border: 1px solid #dddddd;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Header Row Background */
+.expenses-table thead tr {
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+
+/* Task 1 & 5: Position Pseudo-class for Alternating Row Colors */
+.expenses-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Task 4: Hover state for Table Rows */
+.expenses-table tbody tr:hover {
+  background-color: #e8f4f8;
+}
+
+/* Embedded Video Layout */
+.video-container {
+  display: flex;
+  justify-content: center;
+}
+
+iframe {
+  max-width: 100%;
+  border-radius: 6px;
 }
